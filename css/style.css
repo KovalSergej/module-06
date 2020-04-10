@@ -15,7 +15,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-family: 'Kaushan Script', cursive;
     font-family: 'Roboto', sans-serif;
-
+    
     font-weight: 400;    
     color: #999999;
     font-size: 15px;
@@ -23,10 +23,8 @@ body {
 }
 
 #wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
 }
 
 header {
@@ -67,7 +65,7 @@ header {
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 400;     /*this dimention from PS*/
+    font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     text-transform: uppercase;
@@ -196,7 +194,7 @@ header {
     display: flex;
     justify-content: center;
     font-family: 'Kaushan Script', cursive;
-    font-weight: 400;     /*this dimention from PS*/
+    font-weight: 400;
     font-size: 24px;
     line-height: 29px;
     color: #333333;
@@ -267,13 +265,14 @@ header {
     content: '';
     z-index: 0;
     width: 380px;
-    height: 470px;
     padding: 0;
-    background-color: #95e1d3;
 }
 
 .team-img-moving {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     content: '';
     transition-property: transform;
     transition-duration: 200ms;
@@ -290,13 +289,15 @@ header {
     transform: translate(-10px, -10px);
 }
 
+.team-members-item:hover .team-img-moving {
+    box-shadow: 10px 10px rgb(149, 225, 211);
+}
+
 .team-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
-    content: '';
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
     overflow: hidden;
     background: 
     linear-gradient( 
@@ -311,12 +312,7 @@ header {
 .hover-menu-item {
     display: flex;
     justify-content: space-between;
-    position: absolute;
     width: 204px;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .facebook {
@@ -446,14 +442,19 @@ header {
     margin-left: auto;
 }
 
-.form-input {
+.form-object {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.form-input input {
     text-align: left;
     font-family: 'Roboto', sans-serif;
     font-style: italic;
     font-weight: 300;     
     font-size: 15px;
     line-height: 18px;
-    color: #999999;
+    color: #333333;
     overflow: hidden;
     width: 228px;
     height: 40px;
@@ -462,7 +463,16 @@ header {
     padding-left: 10px;
 }
 
-.form-btn {
+.form-input input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: 300;     
+    font-size: 15px;
+    line-height: 18px;
+    color: #999999;
+}
+
+.form-btn input {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 14px;
